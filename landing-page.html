@@ -6,307 +6,31 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="css/styles.css">
 
-        <style>
-
-            @font-face {
-            font-family: 'Amazon Ember';
-            font-weight: 300;
-            src: url('fonts/AmazonEmber_Lt.ttf') format('truetype');
-        }
-
-        @font-face {
-            font-family: 'Amazon Ember';
-            font-weight: 400;
-            src: url('fonts/AmazonEmber_Rg.ttf') format('truetype');
-        }
-
-        @font-face {
-            font-family: 'Amazon Ember';
-            font-weight: 700;
-            src: url('fonts/AmazonEmber_Bd.ttf') format('truetype');
-        }
-
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Amazon Ember', sans-serif;
-            }
-
-            .tab-section {
-                background-color: #1d2834;
-                width: 100%;
-                height: 70px;
-                padding: 0 15px;
-                display: flex;
-                align-items: center;
-            }
-
-            .amazon-logo {
-                margin-left: 30px;
-                width: 75px;
-                margin-top: 5px;
-            }
-
-            .amazon-tlevel-team-logo {
-                display: inline-block;
-                color: white;
-                margin-left: 2px;
-            }
-
-            .tlevels-info {
-                display: inline-block;
-                color: white;
-                margin-left: auto;
-            }
-
-            .navigation {
-                background-color: #232F3E;
-                width: 100%;
-                height: 120px;
-                display: flex;
-                align-items: center;
-                justify-content: left;
-                padding: 0 40px;
-                padding-left: 75px;
-            }
-
-            .subheading {
-                background-color: #1d2834;
-                width: 100%;
-                height: 160px;
-            }
-
-            .navigation-bar {
-                padding-left: 18px;
-                flex: 1;
-                height: 45px;
-                color: black;
-                outline: none;
-                margin-right: 25px;
-            }
-
-            .navigation-bar:focus {
-                outline: 2px solid rgba(255, 161, 19, 0.906);
-            }
-
-            .tlevel-info {
-                background-color: #ebebeb;
-                width: 100%;
-                min-height: 400px;
-                display: flex;
-                gap: 20px;
-                padding: 40px;
-            }
-
-            .opportunities-content,
-            .careers-content,
-            .aws-content {
-                background-color: #fff;
-                flex: 1;
-                padding: 24px;
-            }
-
-            .t-level-content1 {
-                background-color: #fff;
-                width: 100%;
-                min-height: 400px;
-                display: flex;
-                gap: 20px;
-                padding: 40px;
-            }
-
-            .search-button {
-                border-radius: 3px;
-                background-color: #FF9900;
-                display: inline;
-                border: none;
-                cursor: pointer;
-                padding-left: 14px;
-                padding-right: 14px;
-                padding-top: 9px;
-                padding-bottom: 9px;
-                width: 50px;
-                height: 43px;
-            }
-
-            .search-button i {
-                font-size: 23px;
-                color: #232F3E;
-            }
-
-            .fa-bars {
-                color: white;
-                font-size: 20px;
-                margin-right: 10px;
-                cursor: pointer;
-            }
-
-            .subheading {
-                background-color: #1d2834;
-                width: 100%;
-                height: 160px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .promo-banner {
-                background-color: #18202a;
-                display: flex;
-                align-items: center;
-                width: 90%;
-                height: 120px;
-                padding: 0 20px;
-                gap: 20px;
-            }
-
-            .promo-image {
-                height: 90px;
-                width: 200px;
-                object-fit: cover;
-            }
-
-            .promo-text h2 {
-                color: white;
-                font-size: 22px;
-            }
-
-            .promo-text p {
-                color: white;
-                font-weight: 300;
-            }
-
-            .orange {
-                color: #FF9900;
-            }
-
-            .explore-button {
-                margin-left: auto;
-                background: transparent;
-                border: 2px solid white;
-                color: white;
-                padding: 10px 25px;
-                font-size: 16px;
-                cursor: pointer;
-                transition: background-color 0.15s;
-            }
-
-            .explore-button:hover {
-                background-color: white;
-                color: black;
-            }
-
-            .info-content-header {
-                font-weight: 500;
-                padding-bottom: 15px;
-            }
-
-            .paragraph-content {
-                margin-bottom: 20px;
-                justify-content: center;
-            }
-
-            .placement-button {
-                width: 300px;
-                background-color: white;
-                height: 40px;
-                cursor: pointer;
-            }
-
-            .meet-our-students,
-            .tlevel-pathways,
-            .your-placement {
-                flex: 1;
-                background-color: #fff;
-                display: flex;
-                flex-direction: column;
-                border: 1px solid #e0e0e0;
-            }
-
-            .your-placement-image,
-            .tlevel-pathways-image,
-            .students-image {
-                width: 100%;
-                height: 250px;
-                border-radius: 2px;
-                object-fit: cover;
-            }
-
-            .tlevel-content-header {
-                font-weight: 500;
-                font-size: 20px;
-                margin-bottom: 20px;
-            }
-
-            .tlevel-content-paragraph {
-                margin-bottom: 40px;
-            }
-
-            .card-text {
-                padding: 20px;
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .card-text a {
-                margin-top: auto;
-                text-decoration: none;
-                color: #0066c0;
-            }
-
-            .card-text a:hover {
-                text-decoration: underline;
-            }
-
-            .plan-future-today-footer {
-                width: 100%;
-                background-color: #005276;
-                height: 400px;
-            }
-
-            .footer-heading {
-                color: white;
-                display: flex;
-                margin-left: 70px;
-                font-size: 50px;
-                font-weight: 400;
-                margin-bottom: 35px;
-                padding-top: 60px;
-            }
-
-            .paragraph-footer-content {
-                color: white;
-                margin-left: 70px;
-                display: flex;
-                margin-bottom: 30px;
-                max-width: 600px;
-            }
-
-            .learn-about-tlevels-button {
-                display: inline-block;
-                width: 235px;
-                margin-left: 70px;
-                background: transparent;
-                color: white;
-                height: 45px;
-                border: 2px solid white;
-                border-radius: 2px;
-                outline: none;
-                padding: 12px 30px;
-                cursor: pointer;
-            }
-
-        </style>
     </head>
     <body>
+        <div class="overlay" id="overlay"></div>
         <div class="tab-section">
             <i class="fa-solid fa-bars"></i>
             <img class="amazon-logo" src="amazon-images/amazon-logo-1.png" alt="Amazon-Logo" style="background-color: transparent;">
             <p class="amazon-tlevel-team-logo">T-Level Team</p>
             <p class="tlevels-info">T-Levels <i class="fa-solid fa-caret-down"></i></p>
+        </div>
+
+        <div class="tlevel-dropdown-menu" id="t-level-dropdownMenu">
+            <a href="">My profile</a>
+            <a href="">T-Level Applications</a>
+            <a href="">Settings</a>
+            <a href="">Log out</a>
+        </div>
+
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="">Home</a>
+            <a href="">Find Placements</a>
+            <a href="">T-Level Pathways</a>
+            <a href="">Meet our Students</a>
+            <a href="">About</a>
         </div>
 
         <div class="navigation">
@@ -383,6 +107,6 @@
             <button class="learn-about-tlevels-button">Learn about T-Levels</button>
         </div>
 
-        <div>
+        <script src="js/main.js"></script>
     </body>
 </html>

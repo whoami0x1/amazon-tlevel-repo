@@ -1,0 +1,360 @@
+  @font-face {
+            font-family: 'Amazon Ember';
+            font-weight: 300;
+            src: url('../fonts/AmazonEmber_Lt.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Amazon Ember';
+            font-weight: 400;
+            src: url('../fonts/AmazonEmber_Rg.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Amazon Ember';
+            font-weight: 700;
+            src: url('../fonts/AmazonEmber_Bd.ttf') format('truetype');
+        }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Amazon Ember', sans-serif;
+            }
+
+            .tab-section {
+                background-color: #1d2834;
+                width: 100%;
+                height: 70px;
+                padding: 0 15px;
+                display: flex;
+                align-items: center;
+                position: relative;
+            }
+
+            .amazon-logo {
+                margin-left: 30px;
+                width: 75px;
+                margin-top: 5px;
+            }
+
+            .amazon-tlevel-team-logo {
+                display: inline-block;
+                color: white;
+                margin-left: 2px;
+            }
+
+            .tlevels-info {
+                display: inline-block;
+                color: white;
+                margin-left: auto;
+                cursor: pointer;
+            }
+
+            .navigation {
+                background-color: #232F3E;
+                width: 100%;
+                height: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                padding: 0 40px;
+                padding-left: 75px;
+            }
+
+            .navigation-bar {
+                padding-left: 18px;
+                flex: 1;
+                height: 45px;
+                color: black;
+                outline: none;
+                margin-right: 25px;
+            }
+
+            .navigation-bar:focus {
+                outline: 2px solid rgba(255, 161, 19, 0.906);
+            }
+
+            .tlevel-info {
+                background-color: #ebebeb;
+                width: 100%;
+                min-height: 400px;
+                display: flex;
+                gap: 20px;
+                padding: 40px;
+            }
+
+            .opportunities-content,
+            .careers-content,
+            .aws-content {
+                background-color: #fff;
+                flex: 1;
+                padding: 24px;
+            }
+
+            .t-level-content1 {
+                background-color: #fff;
+                width: 100%;
+                min-height: 400px;
+                display: flex;
+                gap: 20px;
+                padding: 40px;
+            }
+
+            .search-button {
+                border-radius: 3px;
+                background-color: #FF9900;
+                display: inline;
+                border: none;
+                cursor: pointer;
+                padding-left: 14px;
+                padding-right: 14px;
+                padding-top: 9px;
+                padding-bottom: 9px;
+                width: 50px;
+                height: 43px;
+            }
+
+            .search-button i {
+                font-size: 23px;
+                color: #232F3E;
+            }
+
+            .fa-bars {
+                color: white;
+                font-size: 20px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+
+            .subheading {
+                background-color: #1d2834;
+                width: 100%;
+                height: 160px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .promo-banner {
+                background-color: #18202a;
+                display: flex;
+                align-items: center;
+                width: 90%;
+                height: 120px;
+                padding: 0 20px;
+                gap: 20px;
+            }
+
+            .promo-image {
+                height: 90px;
+                width: 200px;
+                object-fit: cover;
+            }
+
+            .promo-text h2 {
+                color: white;
+                font-size: 22px;
+            }
+
+            .promo-text p {
+                color: white;
+                font-weight: 300;
+            }
+
+            .orange {
+                color: #FF9900;
+            }
+
+            .explore-button {
+                margin-left: auto;
+                background: transparent;
+                border: 2px solid white;
+                color: white;
+                padding: 10px 25px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.15s;
+            }
+
+            .explore-button:hover {
+                background-color: white;
+                color: black;
+            }
+
+            .info-content-header {
+                font-weight: 500;
+                padding-bottom: 15px;
+            }
+
+            .paragraph-content {
+                margin-bottom: 20px;
+                justify-content: center;
+            }
+
+            .placement-button {
+                width: 400px;
+                height: 50px;
+                background-color: white;
+                cursor: pointer;
+                justify-content: center;
+                border: 2px solid grey;
+            }
+
+            .meet-our-students,
+            .tlevel-pathways,
+            .your-placement {
+                flex: 1;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #e0e0e0;
+            }
+
+            .your-placement-image,
+            .tlevel-pathways-image,
+            .students-image {
+                width: 100%;
+                height: 250px;
+                border-radius: 2px;
+                object-fit: cover;
+            }
+
+            .tlevel-content-header {
+                font-weight: 500;
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .tlevel-content-paragraph {
+                margin-bottom: 40px;
+            }
+
+            .card-text {
+                padding: 20px;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .card-text a {
+                margin-top: auto;
+                text-decoration: none;
+                color: #0066c0;
+            }
+
+            .card-text a:hover {
+                text-decoration: underline;
+            }
+
+            .plan-future-today-footer {
+                width: 100%;
+                background-color: #005276;
+                height: 400px;
+            }
+
+            .footer-heading {
+                color: white;
+                display: flex;
+                margin-left: 70px;
+                font-size: 50px;
+                font-weight: 400;
+                margin-bottom: 35px;
+                padding-top: 60px;
+            }
+
+            .paragraph-footer-content {
+                color: white;
+                margin-left: 70px;
+                display: flex;
+                margin-bottom: 30px;
+                max-width: 600px;
+            }
+
+            .learn-about-tlevels-button {
+                display: inline-block;
+                width: 235px;
+                margin-left: 70px;
+                background: transparent;
+                color: white;
+                height: 45px;
+                border: 2px solid white;
+                border-radius: 2px;
+                outline: none;
+                padding: 12px 30px;
+                cursor: pointer;
+            }
+
+            .dropdown-menu {
+                background-color: white;
+                width: 250px;
+                max-height: 0;
+                height: 700px;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                position: absolute;
+                top: 70px;
+                left: 0px;
+            }
+
+            .dropdown-menu.open {
+                max-height: 800px;
+            }
+
+            .dropdown-menu a {
+                display: flex;
+                color: black;
+                text-decoration: none;
+                padding: 20px 26px;
+            }
+
+            .dropdown-menu a:hover {
+                text-decoration: underline 2px #ffae34;
+            }
+
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0 , 0.4);
+                backdrop-filter: blur(4px);
+            }
+
+            .overlay.active {
+                display: block;
+            }
+
+            .tlevel-dropdown-menu {
+                background-color: white;
+                width: 180px;
+                max-height: 0;
+                height: 250px;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                position: absolute;
+                top: 70px;
+                right: 15px;
+                z-index: 100;
+            }
+
+            .tlevel-dropdown-menu.open {
+                max-height: 210px;
+            }
+
+            .tlevel-dropdown-menu a {
+                color: black;
+                text-decoration: none;
+                display: flex;
+                padding: 12px 20px;
+                border-left: 3px solid transparent;
+            }
+
+            .tlevel-dropdown-menu a:hover {
+                background-color: rgb(161, 161, 161);
+                transition: background-color 0.2s ease-in;
+                border-left: 3px solid #FF9900;
+            }
