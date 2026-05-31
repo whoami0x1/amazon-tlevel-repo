@@ -14,7 +14,7 @@ No server or install needed. Just open `landing-page.html` in your browser:
 
 Open a terminal and run:
 
-git clone https://github.com/whoami0x1/amazon-tlevel-repo.git
+`git clone https://github.com/whoami0x1/amazon-tlevel-repo.git`
 
 2. Open the project
 
@@ -29,16 +29,16 @@ For those of you unfamiliar with working with branches and pull requests, I have
 
 1. Make sure you have the latest code
 
-git checkout master
-git pull
+`git checkout master`
+`git pull`
 
 2. Create a new branch for your work
 
 Name it something that describes what you're doing:
 
-git checkout -b feature/your-feature-name
+`git checkout -b feature/your-feature-name`
 
-For example: feature/navbar or fix/footer-layout
+For example: `feature/navbar` or `fix/footer-layout`
 
 3. Make your changes
 
@@ -46,12 +46,12 @@ Edit files in your editor as normal.
 
 4. Stage and commit your changes
 
-git add <filename> or git add . to add all your changes # stage a specific file, e.g. git add landing-page.html
-git commit -m "Short description of what you changed"
+`git add <filename>` or `git add .` to add all your changes # stage a specific file, e.g. git add landing-page.html
+`git commit -m "Short description of what you changed"`
 
 5. Push your branch to GitHub
 
-git push origin feature/your-feature-name
+`git push origin feature/your-feature-name`
 
 6. Open a Pull Request
 
