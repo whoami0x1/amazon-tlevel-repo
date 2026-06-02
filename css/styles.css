@@ -45,13 +45,6 @@
                 margin-left: 2px;
             }
 
-            .tlevels-info {
-                display: inline-block;
-                color: white;
-                margin-left: auto;
-                cursor: pointer;
-            }
-
             .navigation {
                 background-color: #232F3E;
                 width: 100%;
@@ -310,7 +303,7 @@
             }
 
             .dropdown-menu a:hover {
-                text-decoration: underline 2px #ffae34;
+                border-left: 3px solid #FF9900;
             }
 
             .overlay {
@@ -328,33 +321,20 @@
                 display: block;
             }
 
-            .tlevel-dropdown-menu {
-                background-color: white;
-                width: 180px;
-                max-height: 0;
-                height: 250px;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-                position: absolute;
-                top: 70px;
-                right: 15px;
-                z-index: 100;
-            }
-
-            .tlevel-dropdown-menu.open {
-                max-height: 210px;
-            }
-
-            .tlevel-dropdown-menu a {
+            .register-interest {
+                background-color: #FF9900;
                 color: black;
-                text-decoration: none;
-                display: flex;
-                padding: 12px 20px;
-                border-left: 3px solid transparent;
+                margin-top: 350px;
+                padding: 18px 30px;
+                display: block;
+                border-radius: 3px;
+                border: 1px solid #FF9900;
+                font-size: 16px;
+                margin-left: 15px;
+                cursor: pointer;
+                transition: background-color 0.2s ease-in;
             }
 
-            .tlevel-dropdown-menu a:hover {
-                background-color: rgb(161, 161, 161);
-                transition: background-color 0.2s ease-in;
-                border-left: 3px solid #FF9900;
+            .register-interest:hover {
+                background-color: #ffad32;
             }
