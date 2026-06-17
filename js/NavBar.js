@@ -42,14 +42,6 @@ class NavBar extends HTMLElement {
           }
         </div>
       </div>
-
-      <div class="navigation">
-        <input class="navigation-bar" type="text"
-          placeholder="Search for placements by title or keyword">
-        <button class="search-button">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </div>
     `;
   }
 
