@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Auth Success</title>
+</head>
+<body>
+    <h1>Authentication Successful</h1>
+    <p id="subheading">Check the console for the ID token.</p>
+    <h3 id="redirectmsg"></h3>
+
+    <script>
+    const subheadingEle = document.getElementById('subheading');
+    const redirectmsg = document.getElementById('redirectmsg');
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function init() {
+        const res = await fetch("http://localhost:5501/api/me", {
+            credentials: "include"
+        });
+
+        const user = await res.json();
+
+        console.log("USER:", user);
+
+        const data = user.user;
+
+        subheadingEle.textContent =
+            `Logged in as ${data.username} / ${data.email}`;
+
+        for (let i = 5; i >= 0; i--) {
+            redirectmsg.textContent = `Redirecting in ${i} seconds...`;
+            await sleep(1000);
+        }
+
+        window.location.replace("http://localhost:5500/landing-page.html");
+    }
+
+    init();
+    </script>
+</body>
+</html>
