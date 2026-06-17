@@ -14,18 +14,24 @@ overlay.addEventListener('click', () => {
     document.body.classList.remove('no-scroll');
 });
 
-const tlevelOptionsIcon = document.querySelector('.tlevels-info');
-const tleveldropdownMenu = document.querySelector('#t-level-dropdownMenu');
+function amazonAIPopup() {
+    const amazonAIButton = document.getElementById('amazonAI-button');
+    const aiDropdown = document.querySelector('.amazon-ai-chat-wrapper');
+    const crossIcon = document.querySelector('.cross-icon');
+    
+    amazonAIButton.addEventListener('click', (event) => {
+        aiDropdown.classList.toggle('open');
+        
+        crossIcon.addEventListener('click', (event) => {
+            aiDropdown.classList.remove('open');
+        })
 
-tlevelOptionsIcon.addEventListener('click', () => {
-    tleveldropdownMenu.classList.toggle('open');
-});
+        document.addEventListener('click', (event) => {
+            if (!aiDropdown.contains(event.target) && (!amazonAIButton.contains(event.target))) {
+                aiDropdown.classList.remove('open');
+            };
+        })
+    });
+}
 
-document.addEventListener('click', (event) => {
-    if (
-        !tleveldropdownMenu.contains(event.target) &&
-        !tlevelOptionsIcon.contains(event.target)
-    ) {
-        tleveldropdownMenu.classList.remove('open');
-    }
-});
+amazonAIPopup();

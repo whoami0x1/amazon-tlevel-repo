@@ -350,3 +350,122 @@
             .register-interest:hover {
                 background-color: #ffad32;
             }
+
+            .amazon-ai-wrapper {
+                position: fixed;
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .amazon-ai-button {
+                background-color: #1d2834;
+                border: 1px solid #1d2834;
+                border-radius: 200px;
+                width: 65px;
+                height: 65px;
+                cursor: pointer;
+            }
+
+            .amazon-ai-button-logo {
+                width: 55px;
+                margin-top: 9px;
+            }
+
+            .amazon-ai-chat-wrapper {
+                background-color: white;
+                border: 1px solid #e0e0e0;
+                width: 385px;
+                height: 85vh;
+                position: fixed;
+                right: 16px;
+                bottom: 90px;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            }
+
+            .amazon-ai-chat-wrapper.open {
+                display: block;
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .amazon-ai-chat-wrapper.close {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .amazon-ai-title {
+                font-size: 18px;
+                font-weight:700;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+            }
+
+            .three-dots-icon {
+                width: 27px;
+                position: fixed;
+                cursor: pointer;
+                right: 350px;
+                top: 42px;
+            }
+
+            .cross-icon {
+                width: 28px;
+                position: fixed;
+                cursor: pointer;
+                top: 42px;
+                right: 40px;
+            }
+
+            .amazon-ai-input {
+                display: flex;
+                border-radius: 6px;
+                height: 35px;
+                outline: none;
+                border: 2px solid rgb(104, 112, 120);
+                margin-left: 15px;
+                margin-bottom: 45px;
+                padding-left: 10px;
+                width: 350px;
+            }
+
+            .amazon-ai-input:focus {
+                transition: border 0.2s ease;
+                border: 2px solid black;
+            }
+
+            .orange-line {
+                border: none;
+                border-top: 2px solid #ff9900;
+                margin-top: 25px;
+            }
+
+            .right-arrow-submit {
+                width: 25px;
+                position: fixed;
+                right: 45px;
+                bottom: 143px;
+                cursor: pointer;
+            }
+
+            .ai-input-wrapper {
+                position: relative;
+                display: flex;
+                align-items: center;
+                margin-top: auto;
+            }
+
+            .grey-line {
+                border: none;
+                border-top: 2px solid #ebebf0;
+                display: flex;
+                margin-top: 450px;
+                margin-bottom: 30px;
+            }
