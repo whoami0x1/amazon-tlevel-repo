@@ -35,7 +35,7 @@ class NavBar extends HTMLElement {
                 </div>
               `
               : `
-                <a href="https://eu-north-1q4ytophb9.auth.eu-north-1.amazoncognito.com/login?client_id=26stabed70jpkmp5i4qkca4456&response_type=code&scope=email+openid+phone&redirect_uri=http%3A%2F%2Flocalhost%3A5501%2Fapi%2FcognitoCallback">
+                <a class="register-interest-link" href="https://eu-north-1q4ytophb9.auth.eu-north-1.amazoncognito.com/login?client_id=26stabed70jpkmp5i4qkca4456&response_type=code&scope=email+openid+phone&redirect_uri=http%3A%2F%2Flocalhost%3A5501%2Fapi%2FcognitoCallback">
                   <button class="register-interest">Register your Interest</button>
                 </a>
               `
@@ -85,7 +85,7 @@ class NavBar extends HTMLElement {
               </div>
             `
             : `
-              <a href="https://eu-north-1q4ytophb9.auth.eu-north-1.amazoncognito.com/login?client_id=26stabed70jpkmp5i4qkca4456&response_type=code&scope=email+openid+phone&redirect_uri=http%3A%2F%2Flocalhost%3A5501%2Fapi%2FcognitoCallback">
+              <a class="register-interest-link" href="https://eu-north-1q4ytophb9.auth.eu-north-1.amazoncognito.com/login?client_id=26stabed70jpkmp5i4qkca4456&response_type=code&scope=email+openid+phone&redirect_uri=http%3A%2F%2Flocalhost%3A5501%2Fapi%2FcognitoCallback">
                 <button class="register-interest">Register your Interest</button>
               </a>
             `
@@ -120,6 +120,14 @@ class NavBar extends HTMLElement {
     const menuIcon = this.querySelector('.menu-icon');
     const dropdownMenu = this.querySelector('.dropdown-menu');
     const overlay = this.querySelector('.overlay');
+    const logo = this.querySelector('.amazon-logo');
+    const teamLogo = this.querySelector('.amazon-tlevel-team-logo');
+
+    [logo, teamLogo].forEach((el) => {
+      el.addEventListener('click', () => {
+        window.location.href = 'landing-page.html';
+      });
+    });
 
     menuIcon.addEventListener('click', () => {
       dropdownMenu.classList.toggle('open');

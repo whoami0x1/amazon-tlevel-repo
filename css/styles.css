@@ -292,11 +292,14 @@
                 width: 250px;
                 max-height: 0;
                 height: 100vh;
+                display: flex;
+                flex-direction: column;
                 overflow: hidden;
                 transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 position: fixed;
                 top: 70px;
                 left: 0px;
+                z-index: 1000;
             }
 
             .dropdown-menu.open {
@@ -310,7 +313,7 @@
                 padding: 20px 26px;
             }
 
-            .dropdown-menu a:hover {
+            .dropdown-menu a:not(.register-interest-link):hover {
                 border-left: 3px solid #FF9900;
             }
 
@@ -323,6 +326,7 @@
                 height: 100vh;
                 background: rgba(0, 0, 0 , 0.4);
                 backdrop-filter: blur(4px);
+                z-index: 999;
             }
 
             .overlay.active {
@@ -335,14 +339,15 @@
 
             .register-interest {
                 background-color: #FF9900;
+                position: absolute;
+                top: 270px;
                 color: black;
-                margin-top: 350px;
+                position: relative;   
                 padding: 18px 30px;
                 display: block;
                 border-radius: 2px;
                 border: 1px solid #FF9900;
                 font-size: 16px;
-                margin-left: 15px;
                 cursor: pointer;
                 transition: background-color 0.2s ease-in;
             }
@@ -410,18 +415,18 @@
 
             .three-dots-icon {
                 width: 27px;
-                position: fixed;
+                position: relative;
                 cursor: pointer;
-                right: 350px;
-                top: 42px;
+                left: 25px;
+                bottom: 23px;
             }
 
             .cross-icon {
                 width: 28px;
-                position: fixed;
+                position: relative;
                 cursor: pointer;
-                top: 42px;
-                right: 40px;
+                left: 300px;
+                bottom: 23px;
             }
 
             .amazon-ai-input {
@@ -434,6 +439,7 @@
                 margin-bottom: 45px;
                 padding-left: 10px;
                 width: 350px;
+                position: relative;
             }
 
             .amazon-ai-input:focus {
@@ -444,14 +450,13 @@
             .orange-line {
                 border: none;
                 border-top: 2px solid #ff9900;
-                margin-top: 25px;
             }
 
             .right-arrow-submit {
                 width: 25px;
-                position: fixed;
+                position: relative;
                 right: 45px;
-                bottom: 143px;
+                bottom: 23px;
                 cursor: pointer;
             }
 
@@ -465,7 +470,65 @@
             .grey-line {
                 border: none;
                 border-top: 2px solid #ebebf0;
-                display: flex;
+                position: relative;
                 margin-top: 450px;
                 margin-bottom: 30px;
+            }
+
+            .courses-wrapper {
+                width: 100%;
+                min-height: 200px;
+                margin-top: 10px;
+                display: flex;
+                gap: 20px;
+                padding: 40px;
+            }
+
+            .course-tlevel-title {
+                font-weight: 500;
+                padding-bottom: 30px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .course-tlevel-info {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .tlevel-course-image {
+                width: 100%;
+                object-fit: cover;
+                height: 250px;
+                border-radius: 2px;
+                margin-bottom: 10px;
+                position: relative;
+                max-width: 450px;
+                cursor: pointer;
+            }
+
+            .courses-wrapper-bottom {
+                width: 100%;
+                min-height: 400px;
+                display: flex;
+                padding: 40px;
+                margin-top: auto;
+            }
+
+            .course-tlevel-info-bottom {
+                display: flex;
+                justify-content: center;
+            }
+
+            .courses-box {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                max-width: 450px;
+            }
+
+            .course-title-link {
+                color: black;
+                text-decoration: none;
             }
