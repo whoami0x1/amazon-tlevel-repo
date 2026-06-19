@@ -12,7 +12,24 @@
 
     </head>
     <body>
-        <nav-bar></nav-bar>
+        <div class="overlay" id="overlay"></div>
+        <div class="tab-section">
+            <i class="fa-solid fa-bars"></i>
+            <img onclick="
+            window.location.href = 'landing-page.html'
+            " class="amazon-logo" src="amazon-images/amazon-logo-1.png" alt="Amazon-Logo" style="background-color: transparent;">
+            <p onclick="
+            window.location.href = 'landing-page.html'
+            "class="amazon-tlevel-team-logo">T-Level Team</p>
+        </div>
+
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="landing-page.html">Home</a>
+            <a href="amazon-tlevel-explore.html">Explore Placements</a>
+            <a href="">T-Level Guide</a>
+            <a href="">Student Reviews</a>
+            <a href="https://eu-north-1q4ytophb9.auth.eu-north-1.amazoncognito.com/login?client_id=26stabed70jpkmp5i4qkca4456&response_type=code&scope=email+openid+phone&redirect_uri=http%3A%2F%2Flocalhost%3A5501%2Fapi%2FcognitoCallback"><button class="register-interest">Register your Interest</button></a>
+        </div>
 
         <div class="amazon-ai-wrapper">
             <button id="amazonAI-button" class="amazon-ai-button"><img class="amazon-ai-button-logo" src="amazon-images/amazon-logo-1.png"></button>
