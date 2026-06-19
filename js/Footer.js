@@ -5,7 +5,7 @@ class Footer extends HTMLElement {
             <div class="footer-container">
                     <img class="amazon-logo-footer" src="amazon-images/amazon-logo-1.png">
                     <div class="bottom-footer-copyright">
-                        <p class="amazon-copyright-mark">Amazon | © 1996-2025 Amazon.com, Inc. or its affiliates</p>
+                        <p class="amazon-copyright-mark">Amazon | © 1996-2026 Amazon.com, Inc. or its affiliates</p>
                     </div>
                 <div class="social-icons-column">
                     <div class="social-icons-container">
