@@ -22,7 +22,7 @@ class NavBar extends HTMLElement {
       <div class="dropdown-menu">
         <a href="landing-page.html">Home</a>
         <a href="amazon-tlevel-explore.html">Explore Placements</a>
-        <a href="">T-Level Guide</a>
+        <a href="">T-Level Community</a>
         <a href="">Student Reviews</a>
 
         <div id="auth-section">
