@@ -1,21 +1,27 @@
-function amazonAIPopup() {
-    const amazonAIButton = document.getElementById('amazonAI-button');
-    const aiDropdown = document.querySelector('.amazon-ai-chat-wrapper');
-    const crossIcon = document.querySelector('.cross-icon');
-    
-    amazonAIButton.addEventListener('click', (event) => {
-        aiDropdown.classList.toggle('open');
-        
-        crossIcon.addEventListener('click', (event) => {
-            aiDropdown.classList.remove('open');
-        })
+function registerInterest() {
+    const emailField = document.getElementById('email-field');
+    const nameField = document.getElementById('name-field');
+    const registerButton = document.querySelector('.eop-submit-button');
+    const emailError = document.getElementById('emailError');
+    const nameError = document.getElementById('nameError');
 
-        document.addEventListener('click', (event) => {
-            if (!aiDropdown.contains(event.target) && (!amazonAIButton.contains(event.target))) {
-                aiDropdown.classList.remove('open');
-            };
-        })
-    });
+    registerButton.addEventListener('click', () => {
+        if (nameField.value.trim() === "") {
+            nameField.classList.add('error');
+            nameError.classList.add('show');
+        } else {
+            nameField.classList.remove('error');
+            nameError.classList.remove('show');
+        }
+
+        if (emailField.value.trim() === "") {
+            emailField.classList.add('error');
+            emailError.classList.add('show');
+        } else {
+            emailField.classList.remove('error');
+            emailError.classList.remove('show');
+        }
+    })
 }
 
-amazonAIPopup();
+registerInterest();
