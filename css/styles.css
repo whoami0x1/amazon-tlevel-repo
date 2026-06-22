@@ -813,6 +813,13 @@
                 text-align: left;
             }
 
+            .result-text {
+                width: 85%;
+                color: black;
+                font-weight: bold;
+                text-align: center;
+            }
+
             .input-box:focus {
                 border: 2px solid rgb(123, 129, 123)
             }
@@ -898,3 +905,22 @@
             .details-error-message.show {
                 display: block;
             }
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #000000;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: none;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 

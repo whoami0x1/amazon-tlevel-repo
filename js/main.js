@@ -8,10 +8,12 @@ function registerInterest() {
     const nameError = document.getElementById('nameError');
     const coursesError = document.getElementById('courses-error');
     const detailsError = document.getElementById('detailsError');
-
+    const submitLoader = document.getElementById('submit-loader');
+    const resultText = document.getElementById('result-text')
 
     registerButton.addEventListener('click', async () => {
         // form values
+        submitLoader.style.display = 'inline-block';
         const name = nameField.value.trim();
         const email = emailField.value.trim();
         const courses = coursesField.value.trim();
@@ -51,13 +53,15 @@ function registerInterest() {
             detailsError.classList.add('show');
             hasError = true;
         } else {
-            details.classList.remove('error');
+            detailsField.classList.remove('error');
             detailsError.classList.remove('show');
         }
 
-        if (hasError) return;
-
-        const res = await fetch("http://localhost:5501/api/registerInterest", {
+        if (hasError) {
+            submitLoader.style.display = 'none';
+            return;
+        }
+        const res = await fetch("http://localhost:5501/api/eoi/submit", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
@@ -66,8 +70,15 @@ function registerInterest() {
 
         const data = await res.json();
         if (res.ok) {
-            // success handler routing to dynamo db
+            submitLoader.style.display = 'none';
+            resultText.style.display = 'inline'
+            resultText.style.color = 'green';
+            resultText.textContent = 'Expression of Interested submitted!'
         } else {
+            submitLoader.style.display = 'none';
+            resultText.style.display = 'inline'
+            resultText.style.color = 'red';
+            resultText.textContent = 'Failed to submit Expression of Interest'
             console.log("Server Error:", data);
         }
     });

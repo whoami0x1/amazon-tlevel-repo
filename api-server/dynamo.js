@@ -1,4 +1,5 @@
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+const { EncryptionConfiguration$ } = require("@aws-sdk/client-s3");
 const {
     DynamoDBDocumentClient,
     PutCommand,
@@ -69,9 +70,67 @@ async function logData(req, res, data) {
         console.error(err);
         return res.status(500).json({ error: "DynamoDB write failed" });
     }
-    
+}
+
+async function submitEOI(req, res, data) {
+    const token = req.cookies.id_token;
+
+    if (!token) {
+        return { error: "Not authenticated" };
+    }
+
+    let userid;
+    try {
+        const payload = jwt.decode(token);
+
+        if (!payload) {
+            return { error: "Invalid token" };
+        }
+
+        userid = payload.sub; // no `const` — assigns to outer variable
+    } catch (err) {
+        return { error: "Token parse failed" };
+    }
+
+    let EOIid, EOIname, EOIemail, EOIcourse, EOIdetails;
+    try {
+        console.log(data);
+        if (!data || Object.keys(data).length === 0) return { error: "No data provided" };
+
+        EOIid = uuidv4();
+        EOIname = data.name;
+        EOIemail = data.email;
+        EOIcourse = data.courses;
+        EOIdetails = data.details;
+    } catch (err) {
+        console.log(err);
+        return { error: "Failed to parse EOI args" };
+    }
+
+    try {
+        console.log("About to insert:", { EOIid, EOIname, EOIemail, EOIcourse, EOIdetails });
+        await ddb.send(
+            new PutCommand({
+                TableName: "expressionOfInterests",
+                Item: {
+                    ID: EOIid,
+                    userID: userid,
+                    email: EOIemail,
+                    name: EOIname,
+                    course: EOIcourse,
+                    details: EOIdetails,
+                    createdAt: new Date().toISOString(),
+                }
+            })
+        );
+
+        return res.json({ success: true });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ error: "DynamoDB write failed" });
+    }
 }
 
 module.exports = {
-    logData
+    logData, submitEOI
 };
