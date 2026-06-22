@@ -3,7 +3,12 @@ class Footer extends HTMLElement {
     this.innerHTML = `
       <div class="pages-footer">
             <div class="footer-container">
-                    <img class="amazon-logo-footer" src="amazon-images/amazon-logo-1.png">
+                    <div class="footer-brand">
+                        <img class="amazon-logo-footer" src="amazon-images/amazon-logo-1.png">
+                        <p class="amazon-tlevel-team-logo-bottom">
+                            T-Level Team
+                        </p>
+                    </div>
                     <div class="bottom-footer-copyright">
                         <p class="amazon-copyright-mark">Amazon | © 1996-2026 Amazon.com, Inc. or its affiliates</p>
                     </div>
