@@ -180,11 +180,8 @@ app.post("/api/eoi/submit", async (req, res) => { // route name is self explaini
 });
 
 app.get('/api/eoi/list', async (req, res) => { // list all EOIs
-
-});
-
-app.get('/api/eoi/view', async (req, res) => { // Read a specific one (list should just return like course and title)
-
+    const EOIs = await dynamo.listEOIs(req, res);
+    return res.json({ EOIs })
 });
 
 app.listen(PORT, () => {

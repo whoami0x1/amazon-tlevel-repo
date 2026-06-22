@@ -1,4 +1,4 @@
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+const { DynamoDBClient, ScanCommand } = require("@aws-sdk/client-dynamodb");
 const { EncryptionConfiguration$ } = require("@aws-sdk/client-s3");
 const {
     DynamoDBDocumentClient,
@@ -131,6 +131,22 @@ async function submitEOI(req, res, data) {
     }
 }
 
+async function listEOIs(req, res) {
+    const token = req.cookies.id_token;
+
+    if (!token) {
+        return { error: "Not authenticated" };
+    }
+
+    const result = await ddb.send(
+        new ScanCommand({
+            TableName: "expressionOfInterests"
+        })
+    );
+
+    return result.Items;
+}
+
 module.exports = {
-    logData, submitEOI
+    logData, submitEOI, listEOIs
 };
