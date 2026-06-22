@@ -759,7 +759,7 @@
             .eop-form-container {
                 background-color: #F4F4F4;
                 border: 3px solid #d8d8dba5;
-                height: 600px;
+                height: 650px;
                 border-radius: 5px;
                 width: 500px; 
                 display: flex;
@@ -776,6 +776,17 @@
                 align-items: center;
             }
 
+            .courses {
+                border-radius: 3px;
+                height: 40px;
+                border: 2px solid #ababae;
+                outline: none;
+                width: 85%;
+                background-color: #F4F4F4;
+                padding-left: 10px;
+                margin-bottom: 10px;
+            }
+
             .input-box {
                 border-radius: 3px;
                 height: 40px;
@@ -788,6 +799,10 @@
             }
 
             .input-box.error {
+                border: 2px solid #cc0c39;
+            }
+
+            .courses.error {
                 border: 2px solid #cc0c39;
             }
 
@@ -855,5 +870,31 @@
             }
 
             .email-error-message.show {
+                display: block;
+            }
+
+            .courses-error-message {
+                display: none;
+                width: 85%;
+                text-align: left;
+                color: #cc0c39;
+                font-size: 13px;
+                font-weight: bold;
+            }
+
+            .courses-error-message.show {
+                display: block;
+            }
+
+            .details-error-message {
+                display: none;
+                width: 85%;
+                text-align: left;
+                color: #cc0c39;
+                font-size: 13px;
+                font-weight: bold;
+            }
+
+            .details-error-message.show {
                 display: block;
             }

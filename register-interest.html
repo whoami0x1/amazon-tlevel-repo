@@ -29,13 +29,21 @@
             </div>
 
             <div class="field">
-              <label class="form-labels">Course</label>
-              <input class="input-box">
+              <label for="courses" class="form-labels">Course</label>
+              <select name="courses" class="courses" id="courses">
+                <option value="finance-tlevel">Finance T-Level</option>
+                <option value="digital-tlevel">Digital T-Level</option>
+                <option value="business-tlevel">Business T-Level</option>
+                <option value="engineering-tlevel">Engineering T-Level</option>
+                <option value="media-tlevel">Media T-Level</option>
+              </select>
+              <p class="courses-error-message" id="courses-error"><img class="red-warning-icon" src="amazon-images/red-warning-error.png">Select a course</p>
             </div>
 
             <div class="field">
-              <label class="form-labels">Details</label>
-              <input class="input-box">
+              <label class="form-labels">Why this course?</label>
+              <input class="input-box" id="details-field" type="text" placeholder="Reason for choosing this course">
+              <p class="details-error-message" id="detailsError"><img class="red-warning-icon" src="amazon-images/red-warning-error.png">Provide a reason for why you chose this course</p>
             </div>
 
             <button class="eop-submit-button">Submit</button>
