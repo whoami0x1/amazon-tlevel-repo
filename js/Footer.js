@@ -10,7 +10,7 @@ class Footer extends HTMLElement {
                         </p>
                     </div>
                     <div class="bottom-footer-copyright">
-                        <p class="amazon-copyright-mark">Amazon | © 1996-2025 Amazon.com, Inc. or its affiliates</p>
+                        <p class="amazon-copyright-mark">Amazon | © 1996-2026 Amazon.com, Inc. or its affiliates</p>
                     </div>
                 <div class="social-icons-column">
                     <div class="social-icons-container">
