@@ -86,3 +86,23 @@ class AmazonAI extends HTMLElement {
 
 
 customElements.define('amazon-ai', AmazonAI);
+
+async function sendUserData(sent, response) {
+    try {  
+        const res = await fetch('./api/amazon-ai-chatbot', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sent, response })
+        });
+
+        const data = sendFetch.json()
+
+        if (res.ok) {
+            // append user message to screen and handle model response
+        } else {
+            console.log('Error fetching OpenAI API')
+        } 
+    } catch (err) {
+        console.log('Server Error: ', data)
+    }
+}

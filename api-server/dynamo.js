@@ -64,11 +64,11 @@ async function logData(req, res, data) {
             })
         );
 
-        return res.json({ success: true });
+        if (!res.headersSent) return res.json({ success: true });
 
     } catch (err) {
         console.error(err);
-        return res.status(500).json({ error: "DynamoDB write failed" });
+        if (!res.headersSent) return res.status(500).json({ error: "DynamoDB write failed" });
     }
 }
 

@@ -30,6 +30,7 @@ class NavBar extends HTMLElement {
             user
               ? `
                 <div class="user-box">
+                  <img class="profile-picture-icon" src="amazon-images/profile-picture-icon.png">
                   <span>👤 ${user.username}</span>
                   <button id="logoutBtn">Logout</button>
                 </div>
@@ -80,6 +81,7 @@ class NavBar extends HTMLElement {
           this.user
             ? `
               <div class="user-box">
+                <img class="profile-picture-icon" src="amazon-images/profile-picture-icon.png">
                 <span>${this.user.username}</span>
                 <button id="logoutBtn">Logout</button>
               </div>
