@@ -3,17 +3,18 @@ function registerInterest() {
     const nameField = document.getElementById('name-field');
     const coursesField = document.getElementById('courses');
     const detailsField = document.getElementById('details-field');
+    const eopFormContainer = document.getElementById('eopFormContainer');
     const registerButton = document.querySelector('.eop-submit-button');
     const emailError = document.getElementById('emailError');
     const nameError = document.getElementById('nameError');
     const coursesError = document.getElementById('courses-error');
     const detailsError = document.getElementById('detailsError');
-    const submitLoader = document.getElementById('submit-loader');
-    const resultText = document.getElementById('result-text')
+    const resultText = document.getElementById('result-text');
+    const successMessage = document.getElementById('successMessageTab');
+    const successTitle = document.getElementById('allSetTitle');
 
     registerButton.addEventListener('click', async () => {
         // form values
-        submitLoader.style.display = 'inline-block';
         const name = nameField.value.trim();
         const email = emailField.value.trim();
         const courses = coursesField.value.trim();
@@ -58,7 +59,6 @@ function registerInterest() {
         }
 
         if (hasError) {
-            submitLoader.style.display = 'none';
             return;
         }
         const res = await fetch("http://localhost:5501/api/eoi/submit", {
@@ -70,15 +70,16 @@ function registerInterest() {
 
         const data = await res.json();
         if (res.ok) {
-            submitLoader.style.display = 'none';
-            resultText.style.display = 'inline'
-            resultText.style.color = 'green';
-            resultText.textContent = 'Expression of Interested submitted!'
+            eopFormContainer.classList.add('closed');
+            successMessage.classList.add('open');
+
+            function registerInterestSuccess(name) {
+            successTitle.textContent = `You're all set, ${name}`;
+        }
+        registerInterestSuccess(name);
+
         } else {
-            submitLoader.style.display = 'none';
-            resultText.style.display = 'inline'
-            resultText.style.color = 'red';
-            resultText.textContent = 'Failed to submit Expression of Interest'
+            alert('There was an issue sending your form, please try again');
             console.log("Server Error:", data);
         }
     });

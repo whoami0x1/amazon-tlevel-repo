@@ -1,3 +1,39 @@
+import OpenAI from "openai";
+import { getBearerTokenProvider, DefaultAzureCredential } from "@azure/identity";
+
+const endpoint = "https://amazon-ai-chatbot-resource.services.ai.azure.com/openai/v1";
+const deploymentName = "gpt-4.1-mini";
+const tokenProvider = getBearerTokenProvider(
+    new DefaultAzureCredential(),
+    'https://ai.azure.com/.default');
+
+const openai = new OpenAI({
+    baseURL: process.env.FOUNDRY_ENDPOINT,
+    apiKey: process.env.FOUNDRY_API_KEY,
+    defaultHeaders: {
+        'api-key': process.env.FOUNDRY_API_KEY
+    }
+});
+
+async function main() {
+  const runner = openai.responses
+    .stream({
+      model: deploymentName,
+      input: 'solve 8x + 31 = 2', // changes in accordance with model task
+    })
+    .on('event', (event) => console.log(event))
+    .on('response.output_text.delta', (diff) => process.stdout.write(diff.delta));
+
+  for await (const event of runner) {
+    console.log('event', event);
+  }
+
+  const result = await runner.finalResponse();
+  console.log(result);
+}
+
+main();
+
 class AmazonAI extends HTMLElement {
     connectedCallback() {
         this.innerHTML = this.getTemplate();

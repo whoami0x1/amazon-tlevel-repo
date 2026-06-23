@@ -12,8 +12,20 @@
   <body class="register-page-body">
         <nav-bar></nav-bar>
 
+      <div class="success-message-container">
+        <div class="success-message-wrapper" id="successMessageTab">
+          <img class="amazon-logo-success" src="amazon-images/amazon-logo-1.png">
+          <h2 class="all-set-title" id="allSetTitle"></h2>
+          <p class="success-message">Your expression of interest is in, thanks for taking the time. A member of the T-Level team will review it and reach out within <span class="working-days-text">5 working days.</span></p>
+          <ul class="list-of-requirements">
+            Check your email box
+          </ul>
+          <button class="return-home" href="landing-page.html"><a class="return-home-text" href="landing-page.html">Return Home</a></button>
+        </div>
+      </div>
+
         <div class="eop-form-wrapper">
-          <div class="eop-form-container">
+          <div class="eop-form-container" id="eopFormContainer">
             <h2 class="register-interest-title">Register Interest</h2>
             <p class="form-labels" id="result-text"></p>
 
@@ -48,7 +60,6 @@
             </div>
 
             <button class="eop-submit-button">Submit</button>
-            <span class="loader" id="submit-loader"></span>
           </div>
         </div>
 

@@ -768,6 +768,12 @@
                 margin-bottom: 60px;
             }
 
+            .eop-form-container.closed {
+                overflow: hidden;
+                pointer-events: none;
+                display: none;
+            }
+
             .field {
                 display: flex;
                 flex-direction: column;
@@ -905,22 +911,73 @@
             .details-error-message.show {
                 display: block;
             }
-.loader {
-    width: 48px;
-    height: 48px;
-    border: 5px solid #000000;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: none;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    }
 
-    @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-    } 
+            .success-message-container {
+                display: flex;
+                justify-content: center;
+            }
+
+            .success-message-wrapper {
+                background-color: #18202a;
+                border: 3px solid #FF9900;
+                height: 650px;
+                border-radius: 5px;
+                width: 500px; 
+                display: none;
+                flex-direction: column;
+                margin-top: 40px;
+                margin-bottom: 60px;
+                overflow: hidden;
+                pointer-events: none;
+                align-items: center;
+
+            }
+
+            .success-message-wrapper.open {
+                display: flex;
+                pointer-events: all;
+            }
+
+            .success-message {
+                font-size: 15px;
+                width: 85%;
+                color: white;
+                text-align: center;
+            }
+
+            .working-days-text {
+                font-weight: bold;
+            }
+
+            .amazon-logo-success {
+                width: 120px;
+                margin-top: 40px;
+                cursor: pointer;
+                margin-bottom: 60px;
+            }
+
+            .all-set-title {
+                color: white;
+                font-size: 18px;
+            }
+
+            .return-home-text {
+                text-decoration: none;
+                color: black;
+                font-size: 15px;
+            }
+
+            .return-home {
+                width: 150px;
+                height: 40px;
+                background-color: #FF9900;
+                color: black;
+                margin-top: 40px;
+                border: 1px solid #FF9900;
+                border-radius: 5px;
+            }
+
+            .list-of-requirements {
+                color: black;
+                font-size: 15px;
+            }
