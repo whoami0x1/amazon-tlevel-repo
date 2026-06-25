@@ -1127,210 +1127,227 @@
             margin-bottom: 50px;
         }
 
-         .finance-rectangle {
-            height: 1100px;
-            width: 800px;
+         .rectangle {
+            max-width: 1200px;
             background-color: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            padding: 1000px 800px;
+            padding: 50px;
+            box-sizing: border-box;
          }
             
         .finance-info-title {
+            margin-bottom: 20px;
+        }
+
+        .finance-info-details {
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        .finance-about-title {
+            margin-bottom: 30px;
+        }
+
+        .finance-about-details {
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .finance-what-todo-title {
+            margin-bottom: 20px;
+        }
+
+        .finance-what-todo-details {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .finance-what-todo-ul {
+            margin-bottom: 40px;
+            padding-left: 40px;
+        }
+
+        .finance-eligible-title {
+            margin-bottom: 20px;
+        }
+
+        .finance-eligible-details {
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+        .finance-eligible-ul {
+            margin-top: 20px;
+            padding-left: 30px;
+        }
+
+        .finance-programme-title {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .finance-programme-details {
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        .finance-who-looking-for-title {
+            margin-bottom: 30px;
+        }
+
+        .finance-who-looking-for-details {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .finance-who-looking-for-ul {
+            margin-top: 10px;
+            padding-left: 30px;
+        }
+
+
+        .finance-who-looking-for-p {
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+
+        .finance-future-dev-title {
+            margin-bottom: 20px;
+        }
+
+        .finance-future-dev-details {
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        .business-title-section {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+
+        .business-image {
+            width: 100%;
+            height: 500px;
+            opacity: 0.5;
+            object-fit: cover;
+            object-position: 50% 35%;
+            display: flex;
+        }
+        
+        .business-title {
             position: absolute;
-                top: 20%;
+            top: -30%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .business-subtitle {
+                position: absolute;
+                top: -20%;
                 left: 20%;
                 width: 80%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-        }
+            }
 
-        .finance-info-details {
-            position: absolute;
-            top: 25%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-subcontent {
+                position: absolute;
+                top: -5%;
+                left: 20%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
 
-        .finance-about-title {
-            position: absolute;
-            top: 38%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-info-title {
+                margin-bottom: 20px;
+            }
 
-        .finance-about-details {
-            position: absolute;
-            top: 47%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-info-details {
+                line-height: 1.6;
+                margin-bottom: 50px;
+            }
 
-        .finance-what-todo-title {
-            position: absolute;
-            top: 65%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-about-title {
+                margin-bottom: 30px;
+            }
 
-        .finance-what-todo-details {
-            position: absolute;
-            top: 71%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-about-details {
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
 
-        .finance-what-todo-ul {
-            position: absolute;
-            top: 82%;
-            left: 23%;
-            width: 77%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-what-todo-title {
+                margin-bottom: 20px;
+            }
 
-        .finance-eligible-title {
-            position: absolute;
-            top: 100%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-what-todo-details {
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
 
-        .finance-eligible-details {
-            position: absolute;
-            top: 104%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-what-todo-ul {
+                margin-bottom: 40px;
+                padding-left: 40px;
+            }
 
-        .finance-eligible-ul {
-            position: absolute;
-            top: 114%;
-            left: 23%;
-            width: 77%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-eligibility-title {
+                margin-bottom: 20px;
+            }
 
-        .finance-programme-title {
-            position: absolute;
-            top: 135%;
-            left: 20%;
-            width: 18%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-eligibility-details {
+                margin-bottom: 20px;
+            }
 
-        .finance-programme-details {
-            position: absolute;
-            top: 145%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-eligibility-ul {
+                margin-top: 20px;
+                padding-left: 40px;
+                margin-bottom: 50px;
+            }
 
-        .finance-who-looking-for-title {
-            position: absolute;
-            top: 165%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-programme-title {
+                margin-bottom: 20px;
+            }
 
-        .finance-who-looking-for-details {
-            position: absolute;
-            top: 171%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-programme-details {
+                line-height: 1.6;
+                margin-bottom: 50px;
+            }
 
-        .finance-who-looking-for-ul {
-            position: absolute;
-            top: 180%;
-            left: 23%;
-            width: 77%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-who-looking-for-title {
+                margin-bottom: 20px;
+            }
 
-        .finance-who-looking-for-p {
-            position: absolute;
-            top: 190%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-who-looking-for-details {
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
 
+            .business-who-looking-for-ul {
+                margin-top: 10px;
+                padding-left: 40px;
+                margin-bottom: 30px;
+            }
 
-        .finance-future-dev-title {
-            position: absolute;
-            top: 200%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-who-looking-for-p {
+                margin-bottom: 50px;
+                line-height: 1.6;
+            }
 
-        .finance-future-dev-details {
-            position: absolute;
-            top: 205%;
-            left: 20%;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            .business-future-dev-title {
+                margin-bottom: 20px;
+            }
+
+            .business-future-dev-details {
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
