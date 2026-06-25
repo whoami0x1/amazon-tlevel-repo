@@ -84,6 +84,30 @@
                 outline: none;
             }
 
+            .ai-input-bar {
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #232F3E;
+                width: 100%;
+                padding: 0 40px;
+                padding-left: 75px;
+                bottom: 18px;
+            }
+
+            .ai-input-bar:focus {
+                outline: 2px solid rgba(255, 161, 19, 0.906);
+            }
+
+            .chat-input {
+                color: black;
+                outline: none;
+                width: 60%;
+                height: 55px;
+                padding-left: 18px;
+            }
+
             .navigation-bar:focus {
                 outline: 2px solid rgba(255, 161, 19, 0.906);
             }
@@ -130,6 +154,50 @@
                 width: 80px;
                 height: 43px;
                 transform: background-color 0.2s ease;
+            }
+
+            .ai-search-button {
+                border-radius: 3px;
+                background-color: #FF9900;
+                display: inline;
+                border: none;
+                cursor: pointer;
+                position: relative;
+                left: 350px;
+                bottom: 49px;
+                padding-left: 14px;
+                padding-right: 14px;
+                padding-top: 9px;
+                padding-bottom: 9px;
+                width: 80px;
+                height: 43px;
+                transform: background-color 0.2s ease;
+            }
+
+            .ai-search-button:hover {
+                background-color: #ffad32;
+            }
+
+            .return-module {
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+
+            .return-button {
+                background-color: #FF9900;
+                z-index: 8px;
+                color: black;
+                width: 120px;
+                height: 30px;
+                border: 1px solid #FF9900;
+                border-radius: 2px;
+            }
+
+            .return-home-text {
+                color: black;
+                text-decoration: none;
             }
 
             .search-button:hover {
@@ -431,6 +499,19 @@
             .amazon-ai-chat-wrapper.close {
                 opacity: 0;
                 pointer-events: none;
+            }
+
+            .chat-takeover {
+                position: fixed;
+                inset: 0;
+                z-index: 20;
+                background:rgb(35, 47, 62);
+                opacity: 0;
+                transition: opacity 0.25s ease;
+            }
+
+            .chat-takeover.open {
+                opacity: 1;
             }
 
             .amazon-ai-title {
