@@ -1087,3 +1087,271 @@
             #logoutBtn:hover {
                 background-color: #ffad32;
             }
+
+            .finance-title-section {
+                position: relative;
+                width: 100%;
+                height: 500px;
+            }
+
+            .finance-image {
+                width: 100%;
+                height: 500px;
+                opacity: 0.5;
+                object-fit: cover;
+                object-position: 50% 15%;
+                display: flex;
+            }
+
+            .finance-header {
+                top: 50%;
+                left: 50%;
+            }
+
+            .finance-title {
+                position: absolute;
+                top: -30%;
+                left: 20%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .finance-subtitle {
+                position: absolute;
+                top: -23%;
+                left: 20%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .finance-subcontent {
+                position: absolute;
+                top: -14%;
+                left: 20%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+        .rectangle-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+         .finance-rectangle {
+            height: 1100px;
+            width: 800px;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            padding: 1000px 800px;
+         }
+            
+        .finance-info-title {
+            position: absolute;
+                top: 20%;
+                left: 20%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+        }
+
+        .finance-info-details {
+            position: absolute;
+            top: 25%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-about-title {
+            position: absolute;
+            top: 38%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-about-details {
+            position: absolute;
+            top: 47%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-what-todo-title {
+            position: absolute;
+            top: 65%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-what-todo-details {
+            position: absolute;
+            top: 71%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-what-todo-ul {
+            position: absolute;
+            top: 82%;
+            left: 23%;
+            width: 77%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-eligible-title {
+            position: absolute;
+            top: 100%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-eligible-details {
+            position: absolute;
+            top: 104%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-eligible-ul {
+            position: absolute;
+            top: 114%;
+            left: 23%;
+            width: 77%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-programme-title {
+            position: absolute;
+            top: 135%;
+            left: 20%;
+            width: 18%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-programme-details {
+            position: absolute;
+            top: 145%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-who-looking-for-title {
+            position: absolute;
+            top: 165%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-who-looking-for-details {
+            position: absolute;
+            top: 171%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-who-looking-for-ul {
+            position: absolute;
+            top: 180%;
+            left: 23%;
+            width: 77%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-who-looking-for-p {
+            position: absolute;
+            top: 190%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .finance-future-dev-title {
+            position: absolute;
+            top: 200%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .finance-future-dev-details {
+            position: absolute;
+            top: 205%;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
