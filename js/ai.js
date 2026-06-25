@@ -87,6 +87,8 @@ class AmazonAI extends HTMLElement {
 
 customElements.define('amazon-ai', AmazonAI);
 
+/* 
+
 async function sendUserData(sent, response) {
     try {  
         const res = await fetch('./api/amazon-ai-chatbot', {
@@ -106,3 +108,29 @@ async function sendUserData(sent, response) {
         console.log('Server Error: ', data)
     }
 }
+
+*/
+
+/* OpenAI API GET request through Microsoft Foundry
+
+async function getOpenAIAPI(fetch, response) {
+    try {
+        const res = await fetch(FOUNDRY_ENDPOINT, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fetch, response })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+            // event middleware code
+        } else {
+            console.log('Error fetching Foundry Endpoint')
+        }
+    } catch (err) {
+        console.log('Server Error: ', data);
+    }
+}
+
+*/

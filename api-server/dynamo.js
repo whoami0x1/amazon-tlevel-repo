@@ -124,10 +124,10 @@ async function submitEOI(req, res, data) {
             })
         );
 
-        return res.json({ success: true });
+        return { success: true };
     } catch (err) {
         console.error(err);
-        return res.status(500).json({ error: "DynamoDB write failed" });
+        return { error: "DynamoDB write failed" };
     }
 }
 

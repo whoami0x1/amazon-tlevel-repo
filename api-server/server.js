@@ -4,6 +4,7 @@ const qs = require("querystring");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const dynamo = require('./dynamo')
+const { sendInterestNotification, sendUserConfirmation } = require("./resend");
 
 require("dotenv").config(); 
 
@@ -171,7 +172,9 @@ app.post("/api/eoi/submit", async (req, res) => { // route name is self explaini
         if (eoiRes.error) {
             res.status(500).json({ error: `Failed to submit EOI: ${eoiRes.error}`});
         } else {
-            return { success: true };
+            await sendInterestNotification(data);
+            await sendUserConfirmation(data);
+            res.json({ success: true });
         }
     } catch (err) {
         console.log(`Failed to submit EOI: ${err}`);
