@@ -55,7 +55,7 @@
             <p class="form-labels" id="result-text"></p>
 
             <div class="field">
-              <label class="form-labels">Name</label>
+              <label class="form-labels">Full Name</label>
               <input class="input-box" id="name-field" type="text" placeholder="Your name">
               <p class="name-error-message" id="nameError"><img class="red-warning-icon" src="amazon-images/red-warning-error.png">Enter your name</p>
             </div>
@@ -80,8 +80,11 @@
 
             <div class="field">
               <label class="form-labels">Why this course?</label>
-              <input class="input-box" id="details-field" type="text" placeholder="Reason for choosing this course">
-              <p class="details-error-message" id="detailsError"><img class="red-warning-icon" src="amazon-images/red-warning-error.png">Provide a reason for why you chose this course</p>
+              <div class="textarea-wrapper">
+                <textarea class="input-box why-chosen-course" onkeyup="countChar(this)" id="details-field" placeholder="Reason for choosing this course"></textarea>
+                <p class="min-char-count" id="minCharCount"></p>
+              </div>
+              <p class="details-error-message" id="detailsError"><img class="red-warning-icon" src="amazon-images/red-warning-error.png">Provide at least 150 characters explaining why you chose this course. Cannot be anymore than 250 characters.</p>
             </div>
 
             <button class="eop-submit-button">Submit</button>

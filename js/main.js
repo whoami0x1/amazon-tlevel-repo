@@ -12,6 +12,14 @@ function registerInterest() {
     const resultText = document.getElementById('result-text');
     const successMessage = document.getElementById('successMessageTab');
     const successTitle = document.getElementById('allSetTitle');
+    const minCharCount = document.getElementById('minCharCount');
+
+    function countChar() {
+        minCharCount.textContent = `${detailsField.value.length}/150`;
+    }
+
+    detailsField.addEventListener('input', countChar);
+    countChar();
 
     registerButton.addEventListener('click', async () => {
         // form values
@@ -49,7 +57,7 @@ function registerInterest() {
             coursesError.classList.remove('show');
         }
 
-        if (details === "") {
+        if (details.length < 150 || details.length > 250) {
             detailsField.classList.add('error');
             detailsError.classList.add('show');
             hasError = true;
