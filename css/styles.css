@@ -178,6 +178,25 @@
                 background-color: #ffad32;
             }
 
+            .message-container {
+                display: flex;
+                margin: 70px 16px; 
+                justify-content: flex-start;
+            }
+
+            .message-container.user {
+                
+            }
+
+            .bubble {
+                max-width: 70%;
+                padding: 10px 14px;
+                border-radius: 15px;
+                background-color: #e0e0e0;
+                border: 1px solid #e0e0e0;
+                filter: brightness(90%);
+            }
+
             .return-module {
                 display: flex;
                 justify-content: flex-start;

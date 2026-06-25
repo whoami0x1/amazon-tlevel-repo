@@ -13,10 +13,6 @@
     const subheadingEle = document.getElementById('subheading');
     const redirectmsg = document.getElementById('redirectmsg');
 
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
     async function init() {
         const res = await fetch("http://localhost:5501/api/me", {
             credentials: "include"
@@ -30,11 +26,6 @@
 
         subheadingEle.textContent =
             `Logged in as ${data.username} / ${data.email}`;
-
-        for (let i = 5; i >= 0; i--) {
-            redirectmsg.textContent = `Redirecting in ${i} seconds...`;
-            await sleep(1000);
-        }
 
         window.location.replace("http://localhost:5500/register-interest.html");
     }
