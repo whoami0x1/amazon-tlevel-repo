@@ -26,11 +26,11 @@ async function sendInterestNotification(interest) {
 }
 
 async function sendUserConfirmation(interest) {
-    const { name, email, course } = interest;
+    const { name, email, courses } = interest;
     const { data, error } = await resend.emails.send({
         from: process.env.NOTIFY_FROM,
         to: email,
-        subject: `We've received your interest in ${course}`,
+        subject: `We've received your interest in ${courses}`,
         html: `<p>Hi ${name}, thanks for registering interest in this course. We will follow up and get back to you shortly</p>`
     });
     if (error) throw new Error(`Resend failed: ${error.message}`);
