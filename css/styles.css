@@ -1351,3 +1351,258 @@
                 line-height: 1.6;
                 margin-bottom: 10px;
             }
+
+            .engineering-title-section {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            }
+
+            .engineering-image {
+                width: 100%;
+                height: 500px;
+                opacity: 0.5;
+                object-fit: cover;
+                object-position: 50% 55%;
+                display: flex;
+            }
+
+            .engineering-title {
+                position: absolute;
+                top: -25%;
+                left: 20%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .engineering-subtitle {
+                position: absolute;
+                top: -10%;
+                left: 20%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .engineering-subcontent {
+                position: absolute;
+                top: 5%;
+                left: 20%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .engineering-info-title {
+                margin-bottom: 20px;
+            }
+
+            .engineering-info-details {
+                line-height: 1.6;
+                margin-bottom: 50px;
+            }
+
+            .engineering-about-title {
+                margin-bottom: 20px;
+            }
+
+            .engineering-about-details {
+                line-height: 1.6;
+                margin-bottom: 50px;
+            }
+
+            .engineering-what-todo-title {
+                margin-bottom: 20px;
+            }
+
+            .engineering-what-todo-details {
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+
+            .engineering-what-todo-ul {
+                margin-bottom: 40px;
+                padding-left: 40px;
+            }
+
+            .engineering-eligibility-title {
+                margin-bottom: 20px;
+            }
+
+            .engineering-eligibility-details {
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+
+            .engineering-eligibility-ul {
+                margin-bottom: 40px;
+                padding-left: 40px;
+            }
+
+            .engineering-programme-title {
+                margin-bottom: 20px;
+            }
+
+            .engineering-programme-details {
+                line-height: 1.6;
+                margin-bottom: 50px;
+                padding-left: 40px;
+            }
+
+            .engineering-who-looking-for-title {
+                margin-bottom: 20px;
+            }
+
+            .engineering-who-looking-for-details {
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .engineering-who-looking-for-ul {
+                margin-bottom: 40px;
+                padding-left: 40px;
+            }
+
+            .engineering-future-dev-title {
+                margin-bottom: 20px;
+            }
+
+            .engineering-future-dev-details {
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .digital-title-section {
+                position: relative;
+                width: 100%;
+                height: 500px;
+            }
+
+            .digital-image {
+                width: 100%;
+                height: 500px;
+                opacity: 0.5;
+                object-fit: cover;
+                object-position: 50% 50%;
+                display: flex;
+            }
+
+            .digital-title {
+                position: absolute;
+                top: -20%;
+                left: 20%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .digital-subtitle {
+                position: absolute;
+                top: -10%;
+                left: 20%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+
+            .digital-subcontent {
+                position: absolute;
+                top: 7%;
+                left: 20%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .digital-info-title {
+                margin-bottom: 20px;
+            }
+
+            .digital-info-details {
+                line-height: 1.6;
+                margin-bottom: 50px;
+            }
+
+            .digital-about-title {
+                margin-bottom: 20px;
+            }
+
+            .digital-about-details {
+                line-height: 1.6;
+                margin-bottom: 50px;
+            }
+
+            .digital-what-todo-title {
+                margin-bottom: 20px;
+            }
+
+            .digital-what-todo-details {
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
+
+            .digital-what-todo-ul {
+                margin-bottom: 40px;
+                padding-left: 40px;
+            }
+
+            .digital-eligibility-title {
+                margin-bottom: 20px;
+            }
+
+            .digital-eligibility-details {
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+
+            .digital-eligibility-ul {
+                margin-bottom: 40px;
+                padding-left: 40px;
+            }
+
+            .digital-programme-title {
+                margin-bottom: 20px;
+            }
+
+            .digital-programme-details {
+                line-height: 1.6;
+                margin-bottom: 50px;
+                padding-left: 40px;
+            }
+
+            .digital-who-looking-for-title {
+                margin-bottom: 20px;
+            }
+
+            .digital-who-looking-for-details {
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .digital-who-looking-for-ul {
+                margin-bottom: 40px;
+                padding-left: 40px;
+            }
+
+            .digital-future-dev-title {
+                margin-bottom: 20px;
+            }
+
+            .digital-future-dev-details {
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
