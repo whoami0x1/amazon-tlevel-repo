@@ -171,7 +171,9 @@ app.post("/api/eoi/submit", async (req, res) => { // route name is self explaini
         if (eoiRes.error) {
             res.status(500).json({ error: `Failed to submit EOI: ${eoiRes.error}`});
         } else {
-            return { success: true };
+            await sendInterestNotification(data);
+            await sendUserConfirmation(data);
+            res.json({ success: true });
         }
     } catch (err) {
         console.log(`Failed to submit EOI: ${err}`);
@@ -183,6 +185,11 @@ app.get('/api/eoi/list', async (req, res) => { // list all EOIs
     const EOIs = await dynamo.listEOIs(req, res);
     return res.json({ EOIs })
 });
+
+app.get('/api/eoi/eligable', async (req, res) => {
+    const eligable = await dynamo.eligableForEOI(req, res);
+    return res.json({ eligable })
+})
 
 app.listen(PORT, () => {
     console.log(`Auth server running on http://localhost:${PORT}`);
