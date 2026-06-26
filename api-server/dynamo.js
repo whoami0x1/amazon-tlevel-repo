@@ -1,9 +1,11 @@
-const { DynamoDBClient, ScanCommand } = require("@aws-sdk/client-dynamodb");
+const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
 const { EncryptionConfiguration$ } = require("@aws-sdk/client-s3");
 const {
     DynamoDBDocumentClient,
     PutCommand,
-    GetCommand
+    GetCommand,
+    QueryCommand,
+    ScanCommand   // <-- move this here
 } = require("@aws-sdk/lib-dynamodb");
 require("dotenv").config(); 
 const jwt = require("jsonwebtoken");
@@ -147,6 +149,71 @@ async function listEOIs(req, res) {
     return result.Items;
 }
 
+async function eligableForEOI(req, res) {
+    const token = req.cookies.id_token;
+
+    if (!token) {
+        return { error: "Not authenticated." };
+    }
+
+    let userid;
+    try {
+        const payload = jwt.decode(token);
+
+        if (!payload) {
+            return { error: "Invalid token" };
+        }
+
+        userid = payload.sub;
+    } catch (err) {
+        return { error: "Token parse failed" };
+    }
+
+    const result = await ddb.send(
+        new ScanCommand({
+            TableName: "expressionOfInterests",
+            FilterExpression: "userID = :userid",
+            ExpressionAttributeValues: {
+                ":userid": userid
+            }
+        })
+    );
+
+    const submissions = result.Items || [];
+
+    if (submissions.length > 2) {
+        return {
+            eligible: false,
+            reason: "You have reached the limit of Expression of Interest submissions."
+        };
+    }
+
+    const latestSubmission = submissions
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))[0];
+
+    if (latestSubmission) {
+        const oneWeekMs = 7 * 24 * 60 * 60 * 1000;
+        const ageMs = Date.now() - new Date(latestSubmission.createdAt).getTime();
+
+        if (ageMs < oneWeekMs) {
+            const remainingMs = oneWeekMs - ageMs;
+            const remainingDays = Math.ceil(
+                remainingMs / (24 * 60 * 60 * 1000)
+            );
+
+            return {
+                eligible: false,
+                reason: `You can submit a new Expression of Interest in ${remainingDays} day${remainingDays === 1 ? "" : "s"}.`
+            };
+        }
+    }
+
+    return {
+        eligible: true,
+        reason: null
+    };
+}
+
 module.exports = {
-    logData, submitEOI, listEOIs
+    logData, submitEOI, listEOIs, eligableForEOI
 };

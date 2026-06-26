@@ -187,6 +187,11 @@ app.get('/api/eoi/list', async (req, res) => { // list all EOIs
     return res.json({ EOIs })
 });
 
+app.get('/api/eoi/eligable', async (req, res) => {
+    const eligable = await dynamo.eligableForEOI(req, res);
+    return res.json({ eligable })
+})
+
 app.listen(PORT, () => {
     console.log(`Auth server running on http://localhost:${PORT}`);
 });
