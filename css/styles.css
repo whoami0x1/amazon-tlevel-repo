@@ -1762,3 +1762,193 @@
                 line-height: 1.6;
                 margin-bottom: 20px;
             }
+
+            /* Tablet and mobile: viewport adaptation */
+            @media (max-width: 768px) {
+
+                .navigation {
+                    height: auto;
+                    padding: 50px 20px;
+                }
+
+                .landing-page-title {
+                    font-size: 28px;
+                }
+
+                .navigation-bar {
+                    width: 100%;
+                }
+
+                .search-button {
+                    position: static;
+                    left: auto;
+                    bottom: auto;
+                    width: 100%;
+                    margin-top: 12px;
+                }
+
+                .ai-input-bar {
+                    padding: 0 20px;
+                }
+
+                .chat-input {
+                    width: 100%;
+                }
+
+                .ai-search-button {
+                    position: static;
+                    left: auto;
+                    bottom: auto;
+                    width: 100%;
+                    margin-top: 12px;
+                }
+
+                .bubble {
+                    max-width: 85%;
+                }
+
+                .subheading {
+                    height: auto;
+                    padding: 20px 0;
+                }
+
+                .promo-banner {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    width: 100%;
+                    height: auto;
+                    padding: 20px;
+                }
+
+                .promo-image {
+                    width: 100%;
+                    height: auto;
+                }
+
+                .explore-button {
+                    margin-left: 0;
+                    margin-top: 15px;
+                }
+
+                .tlevel-info,
+                .t-level-content1,
+                .courses-wrapper,
+                .courses-wrapper-bottom,
+                .why-tlevels-content {
+                    flex-direction: column;
+                    padding: 20px;
+                }
+
+                .courses-box,
+                .tlevel-course-image,
+                .tlevels-at-amazon-content,
+                .placement-button {
+                    width: 100%;
+                    max-width: 100%;
+                }
+
+                .plan-future-today-section {
+                    height: 480px;
+                }
+
+                .footer-heading {
+                    font-size: 28px;
+                    margin-left: 20px;
+                }
+
+                .paragraph-footer-content {
+                    margin-left: 20px;
+                    max-width: 90%;
+                }
+
+                .learn-about-tlevels-button {
+                    margin-left: 20px;
+                }
+
+                .pages-footer {
+                    height: auto;
+                    padding: 30px 0;
+                }
+
+                .footer-container {
+                    flex-direction: column;
+                    gap: 20px;
+                    padding: 0 20px;
+                    margin-bottom: 30px;
+                    text-align: center;
+                }
+
+                .bottom-footer-copyright {
+                    margin-top: 0;
+                    right: auto;
+                    position: static;
+                }
+
+                .social-icons-column {
+                    align-items: center;
+                }
+
+                .amazon-ai-input {
+                    width: 100%;
+                }
+
+                .finance-title-section,
+                .business-title-section,
+                .engineering-title-section,
+                .digital-title-section {
+                    height: auto;
+                }
+
+                .finance-image,
+                .business-image,
+                .engineering-image,
+                .digital-image {
+                    height: 280px;
+                }
+
+                .finance-title, .finance-subtitle, .finance-subcontent,
+                .business-title, .business-subtitle, .business-subcontent,
+                .engineering-title, .engineering-subtitle, .engineering-subcontent,
+                .digital-title, .digital-subtitle, .digital-subcontent {
+                    position: static;
+                    width: 100%;
+                    height: auto;
+                    left: 0;
+                    top: 0;
+                    padding: 16px 20px;
+                }
+
+                .rectangle {
+                    padding: 24px;
+                }
+
+                .eop-form-container {
+                    width: 92%;
+                    height: auto;
+                }
+
+                .success-message-wrapper {
+                    width: 92%;
+                    height: auto;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .landing-page-title {
+                    font-size: 22px;
+                }
+
+                .footer-heading {
+                    font-size: 22px;
+                }
+
+                .amazon-ai-chat-wrapper {
+                    width: calc(100vw - 24px);
+                    right: 12px;
+                }
+
+                .eop-form-container,
+                .success-message-wrapper {
+                    width: 95%;
+                }
+            }
