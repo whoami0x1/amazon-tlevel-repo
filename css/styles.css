@@ -449,8 +449,21 @@
                 padding: 20px 26px;
             }
 
+            .pdf-logo {
+                width: 50px;
+                margin-bottom: 10px;
+                display: flex;
+            }
+
+            .pdf-link {
+                text-decoration: none;
+                color: black;
+                margin-bottom: 30px;
+                display: flex;
+            }
+
             .dropdown-menu a:not(.register-interest-link):hover {
-                border-left: 3px solid #FF9900;
+                border-left: 7px solid #FF9900;
             }
 
             .overlay {

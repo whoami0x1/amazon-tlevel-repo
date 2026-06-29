@@ -56,7 +56,8 @@ askAIButton.addEventListener('click', async () => {
 
         addMessage(data.reply, 'bot');
         conversationHistory.push({ role: 'assistant', content: data.reply });
-    } catch (err) {
+    } catch (err) {askButton.disabled = true;
+    aiChatBotInput.disabled = true;
         addMessage('Sorry I could not reach the server. Please try again.', 'bot');
         console.log(err);
     } 
