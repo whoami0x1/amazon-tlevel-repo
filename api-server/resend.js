@@ -4,16 +4,25 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function sendInterestNotification(interest) {
     const { name, email, courses, details } = interest;
+    const courseNames = {
+        "digital-tlevel": "Digital T-Level",
+        "finance-tlevel": "Finance T-Level",
+        "business-tlevel": "Business T-Level",
+        "engineering-tlevel": "Engineering T-Level",
+        "media-tlevel": "Media T-Level",
+    };
+
+    const courseName = courseNames[courses] || courses;
 
     const { data, error } = await resend.emails.send({
         from: process.env.NOTIFY_FROM,
         to: process.env.NOTIFY_TO,
-        subject: `New T-Level Interest from ${name} - ${courses}`,
+        subject: `New T-Level Interest from ${name} - ${courseName}`,
         html: `
         <h2>New Register Interest Submission</h2>
         <p><strong>Name: </strong> ${name}</p>
         <p><strong>Email: </strong> ${email}</p>
-        <p><strong>Course: </strong> ${courses}</p>
+        <p><strong>Course: </strong> ${courseName}</p>
         <p><strong>Details: </strong> ${details}</p> 
         `,
     });
@@ -27,10 +36,20 @@ async function sendInterestNotification(interest) {
 
 async function sendUserConfirmation(interest) {
     const { name, email, courses } = interest;
+    const courseNames = {
+        "digital-tlevel": "Digital T-Level",
+        "finance-tlevel": "Finance T-Level",
+        "business-tlevel": "Business T-Level",
+        "engineering-tlevel": "Engineering T-Level",
+        "media-tlevel": "Media T-Level",
+    };
+
+    const courseName = courseNames[courses] || courses;
+
     const { data, error } = await resend.emails.send({
         from: process.env.NOTIFY_FROM,
         to: email,
-        subject: `We've received your interest in ${courses}`,
+        subject: `We've received your interest in ${courseName}`,
         html: `
         <!DOCTYPE html>
         <body>
@@ -146,19 +165,19 @@ async function sendUserConfirmation(interest) {
                 <td class="module" style="background-color: #FFF; color: #444; font-family: 'Amazon Ember', 'Helvetica Neue', Roboto, Arial, sans-serif; font-size: 14px; line-height: 140%; padding: 25px 35px;">
                 <h1 style="font-size: 20px; font-weight: bold; line-height: 1.3; margin: 0 0 15px 0;">Amazon T-Levels</h1>
                 <p style="margin: 0 0 15px 0; padding: 0 0 0 0;">Hello,</p>
-                <p style="margin: 0 0 15px 0; padding: 0 0 0 0;">Thank you for submitting your expression of interest for the Amazon T-Level ${courses} course! An Amazon member will be in touch shortly to review your interest.</p>
+                <p style="margin: 0 0 15px 0; padding: 0 0 0 0;">Thank you for submitting your expression of interest for the Amazon T-Level ${courseName} course! An Amazon member will be in touch shortly to review your interest.</p>
                 </td>
             </tr>
         <tr>
             <td class="module module-otp" style="background-color: #FFF; color: #444; font-family: 'Amazon Ember', 'Helvetica Neue', Roboto, Arial, sans-serif; font-size: 14px; line-height: 140%; padding: 25px 35px; padding-top: 0; text-align: center;">
             <div class="label" style="font-weight: bold; padding-bottom: 15px;">${name}'s Expression Of Interest for</div>
-            <div class="code" style="color: #000; font-size: 36px; font-weight: bold; padding-bottom: 15px;">${courses}</div>
+            <div class="code" style="color: #000; font-size: 36px; font-weight: bold; padding-bottom: 15px;">${courseName}</div>
             <div class="description" style="color: #444; font-size: 10px;">A amazon team member will review your interest and be in touch shortly</div>
             </td>
         </tr>
         <tr>
         <td class="module" style="background-color: #FFF; color: #444; font-family: 'Amazon Ember', 'Helvetica Neue', Roboto, Arial, sans-serif; font-size: 14px; line-height: 140%; padding: 25px 35px;">
-            <p style="margin: 0 0 15px 0; padding: 0 0 0 0;">Thank you for submitting your expression of interest for the Amazon T-Level ${courses} course! An Amazon member will be in touch shortly to review your interest. In the meantime read up on our courses[1].</p>
+            <p style="margin: 0 0 15px 0; padding: 0 0 0 0;">Thank you for submitting your expression of interest for the Amazon T-Level ${courseName} course! An Amazon member will be in touch shortly to review your interest. In the meantime read up on our courses[1].</p>
             <p style="margin: 0 0 15px 0; padding: 0 0 0 0;">[1] http://localhost:5500/explore</p>
         </td>
         </tr>

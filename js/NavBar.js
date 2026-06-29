@@ -25,22 +25,14 @@ class NavBar extends HTMLElement {
         <a href="">T-Level Community</a>
         <a href="">Student Reviews</a>
 
+        ${this.isAdmin ? `
+          <a href="/dashboard" class="admin-link">
+            Admin Dashboard
+          </a>
+        ` : ""}
+
         <div id="auth-section">
-          ${
-            user
-              ? `
-                <div class="user-box">
-                  <img class="profile-picture-icon" src="amazon-images/profile-picture-icon.png">
-                  <span>👤 ${user.username}</span>
-                  <button id="logoutBtn">Logout</button>
-                </div>
-              `
-              : `
-                <a class="register-interest-link" href="https://eu-north-1q4ytophb9.auth.eu-north-1.amazoncognito.com/login?client_id=26stabed70jpkmp5i4qkca4456&response_type=code&scope=email+openid+phone&redirect_uri=http%3A%2F%2Flocalhost%3A5501%2Fapi%2FcognitoCallback">
-                  <button class="register-interest">Register your Interest</button>
-                </a>
-              `
-          }
+          ...
         </div>
       </div>
     `;
@@ -54,6 +46,7 @@ class NavBar extends HTMLElement {
 
       if (!res.ok) {
         this.user = null;
+        this.isAdmin = false;
         this.updateAuthUI();
         return;
       }
@@ -61,9 +54,24 @@ class NavBar extends HTMLElement {
       const data = await res.json();
       this.user = data.user;
 
+      // check admin status
+      const adminRes = await fetch("http://localhost:5501/api/isadmin", {
+        credentials: "include"
+      });
+
+      if (adminRes.ok) {
+        const adminData = await adminRes.json();
+        this.isAdmin = adminData.admin === true;
+      } else {
+        this.isAdmin = false;
+      }
+
+      this.innerHTML = this.getTemplate(this.user);
+      this.initLogic();
       this.updateAuthUI();
     } catch (err) {
       this.user = null;
+      this.isAdmin = false;
       this.updateAuthUI();
     }
   }

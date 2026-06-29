@@ -96,7 +96,6 @@ async function submitEOI(req, res, data) {
 
     let EOIid, EOIname, EOIemail, EOIcourse, EOIdetails;
     try {
-        console.log(data);
         if (!data || Object.keys(data).length === 0) return { error: "No data provided" };
 
         EOIid = uuidv4();
@@ -110,7 +109,6 @@ async function submitEOI(req, res, data) {
     }
 
     try {
-        console.log("About to insert:", { EOIid, EOIname, EOIemail, EOIcourse, EOIdetails });
         await ddb.send(
             new PutCommand({
                 TableName: "expressionOfInterests",
