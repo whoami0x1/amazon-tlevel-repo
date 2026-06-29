@@ -629,13 +629,24 @@
                 margin-bottom: 30px;
             }
 
-            .courses-wrapper {
+            .top-column-course-wrapper {
                 width: 100%;
                 min-height: 200px;
-                margin-top: 10px;
+                margin-top: -15px;
                 display: flex;
-                gap: 20px;
+                gap: 30px;
                 padding: 40px;
+                justify-content: center;
+            }
+
+            .bottom-column-course-wrapper {
+                width: 100%;
+                min-height:200px;
+                margin-top: -45px;
+                display: flex;
+                gap: 30px;
+                padding: 40px;
+                justify-content: center;
             }
 
             .course-tlevel-title {
@@ -685,6 +696,10 @@
             .course-title-link {
                 color: black;
                 text-decoration: none;
+            }
+
+            .why-tlevels-title {
+                text-align: center;
             }
 
             .why-tlevels-container {
