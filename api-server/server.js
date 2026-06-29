@@ -5,6 +5,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const dynamo = require('./dynamo')
 const { sendInterestNotification, sendUserConfirmation } = require("./resend");
+const registerChatRoute = require('./ai')
 
 require("dotenv").config(); 
 
@@ -191,6 +192,8 @@ app.get('/api/eoi/eligable', async (req, res) => {
     const eligable = await dynamo.eligableForEOI(req, res);
     return res.json({ eligable })
 })
+
+registerChatRoute(app);
 
 app.listen(PORT, () => {
     console.log(`Auth server running on http://localhost:${PORT}`);
