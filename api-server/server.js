@@ -5,6 +5,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const dynamo = require('./dynamo')
 const { sendInterestNotification, sendUserConfirmation } = require("./resend");
+const { CognitoJwtVerifier } = require("aws-jwt-verify");
 
 require("dotenv").config(); 
 
@@ -14,6 +15,12 @@ const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 
 const app = express();
 const PORT = 5501;
+
+const verifier = CognitoJwtVerifier.create({
+    userPoolId: "eu-north-1_q4yTOPHb9",
+    tokenUse: "id",
+    clientId: process.env.COGNITO_CLIENT_ID,
+});
 
 app.use(cookieParser());
 app.use(express.json())
@@ -32,15 +39,24 @@ const COGNITO_DOMAIN = process.env.COGNITO_DOMAIN;
 const jwt = require("jsonwebtoken");
 const { configDotenv } = require("dotenv");
 
-function requireAuth(req, res, next) {
+async function verify(token) {
+    return await verifier.verify(token);
+}
+
+async function requireAuth(req, res, next) {
     const token = req.cookies.id_token;
-    if (!token) return res.status(401).json({ error: "Not authenticated" });
+
+    if (!token) {
+        return res.status(401).json({ error: "Not authenticated" });
+    }
 
     try {
-        jwt.decode(token);
+        const decoded = await verify(token);
+        req.user = decoded;
         next();
-    } catch {
-        return res.status(401).json({ error: "Invalid token" });
+    } catch (err) {
+        console.log(err)
+        return res.status(401).json({ error: "Invalid or expired token" });
     }
 }
 
@@ -166,7 +182,6 @@ app.get("/api/log", async (req, res) => {
 app.post("/api/eoi/submit", async (req, res) => { // route name is self explainitory
     try {
         const data = req.body;
-        console.log(data)
         const eoiRes = await dynamo.submitEOI(req, res, data);
 
         if (eoiRes.error) {
@@ -191,6 +206,18 @@ app.get('/api/eoi/eligable', async (req, res) => {
     const eligable = await dynamo.eligableForEOI(req, res);
     return res.json({ eligable })
 })
+
+app.get('/api/isAdmin', requireAuth, async (req, res) => {
+    const groups = req.user["cognito:groups"] || [];
+    const isAdmin = groups.includes("admin");
+
+    if (!isAdmin) {
+        return res.json({ admin: false });
+    } else {
+        return res.json({ admin: true });
+    }
+    res.json( req.user );
+});
 
 app.listen(PORT, () => {
     console.log(`Auth server running on http://localhost:${PORT}`);
