@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const dynamo = require('./dynamo')
 const { sendInterestNotification, sendUserConfirmation } = require("./resend");
 const { CognitoJwtVerifier } = require("aws-jwt-verify");
+const crypto = require("crypto");
 
 require("dotenv").config(); 
 
@@ -23,6 +24,8 @@ const verifier = CognitoJwtVerifier.create({
 });
 
 app.use(cookieParser());
+app.use(express.json({ type: ["application/json", "application/*+json"] }));
+app.use(express.text({ type: ["text/plain", "application/*+json"] }));
 app.use(express.json())
 app.use(cors({
     origin: ["http://localhost:5500", "http://127.0.0.1:5500"],
@@ -217,6 +220,50 @@ app.get('/api/isAdmin', requireAuth, async (req, res) => {
         return res.json({ admin: true });
     }
     res.json( req.user );
+});
+
+app.post("/api/time", async (req, res) => {
+    try {
+        let payload = req.body;
+        console.log("[tracker] Incoming ", payload)
+
+        if (typeof payload === "string") {
+            try {
+                payload = JSON.parse(payload);
+            } catch (parseErr) {
+                return res.status(400).json({ error: "Invalid tracking payload" });
+            }
+        }
+
+        const { page, duration } = payload || {};
+        const numericDuration = Number(duration);
+
+        if (typeof page !== "string" || !Number.isFinite(numericDuration)) {
+            return res.status(400).json({ error: "Invalid tracking payload" });
+        }
+
+        const userId = String(req.user?.sub || req.user?.id || "anonymous");
+
+        const data = {
+            id: crypto.randomUUID(),
+            timestamp: new Date().toISOString(),
+            userId,
+            page,
+            duration: numericDuration
+        };
+
+        const result = await dynamo.submitTimeTracking(data);
+
+        if (result.error) {
+            return res.status(500).json({ error: result.error });
+        }
+
+        res.json({ success: true });
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Failed to record page time" });
+    }
 });
 
 app.listen(PORT, () => {
