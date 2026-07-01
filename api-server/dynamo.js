@@ -212,6 +212,23 @@ async function eligableForEOI(req, res) {
     };
 }
 
+async function submitTimeTracking(data) {
+    try {
+        console.log("[tracker] Submitting time tracker", data);
+
+        await ddb.send(new PutCommand({
+            TableName: "kpi",
+            Item: data
+        }));
+
+        console.log("[tracker] Time tracker saved successfully");
+        return { success: true };
+    } catch (err) {
+        console.error("[tracker] Dynamo write failed", err);
+        return { error: err.message };
+    }
+}
+
 module.exports = {
-    logData, submitEOI, listEOIs, eligableForEOI
+    logData, submitEOI, listEOIs, eligableForEOI, submitTimeTracking
 };
