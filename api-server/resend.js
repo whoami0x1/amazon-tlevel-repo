@@ -164,7 +164,7 @@ async function sendUserConfirmation(interest) {
             <tr>
                 <td class="module" style="background-color: #FFF; color: #444; font-family: 'Amazon Ember', 'Helvetica Neue', Roboto, Arial, sans-serif; font-size: 14px; line-height: 140%; padding: 25px 35px;">
                 <h1 style="font-size: 20px; font-weight: bold; line-height: 1.3; margin: 0 0 15px 0;">Amazon T-Levels</h1>
-                <p style="margin: 0 0 15px 0; padding: 0 0 0 0;">Hello,</p>
+                <p style="margin: 0 0 15px 0; padding: 0 0 0 0;">Hello, ${name}</p>
                 <p style="margin: 0 0 15px 0; padding: 0 0 0 0;">Thank you for submitting your expression of interest for the Amazon T-Level ${courseName} course! An Amazon member will be in touch shortly to review your interest.</p>
                 </td>
             </tr>
