@@ -237,6 +237,11 @@
                 height: 30px;
                 border: 1px solid #FF9900;
                 border-radius: 2px;
+                cursor: pointer;
+            }
+
+            .return-button:hover {
+                background-color: #ffad32;
             }
 
             .return-home-text {
@@ -746,6 +751,11 @@
                 padding: 40px;
                 gap: 20px;
                 border: 2px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
             }
 
             .tlevels-at-amazon-content-title {
