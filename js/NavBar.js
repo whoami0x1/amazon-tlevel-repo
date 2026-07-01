@@ -23,7 +23,7 @@ class NavBar extends HTMLElement {
         <a href="landing-page.html">Home</a>
         <a href="amazon-tlevel-explore.html">Explore Placements</a>
         <a href="">T-Level Community</a>
-        <a href="">Student Reviews</a>
+        <a href="student-reviews.html">Student Reviews</a>
 
         ${this.isAdmin ? `
           <a href="/dashboard" class="admin-link">
